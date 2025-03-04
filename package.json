@@ -2,19 +2,20 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/bkbtpout/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/bkbtpout/frontend-project-44/actions)",
-  "main": "index.js",
+  "main": "bin/brain-games.js",
   "scripts": {
     "start": "node bin/brain-games.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "type": "module"
-    
   },
   "author": "",
   "license": "ISC",
-
-  "bin": {
-  "brain-games": "bin/brain-games.js"
+ "bin": {
+    "brain-games": "./bin/brain-games.js"
+  },
+  "keywords": [],
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
-}
-
 
