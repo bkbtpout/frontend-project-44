@@ -4,20 +4,23 @@
   "description": "[![Actions Status](https://github.com/bkbtpout/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/bkbtpout/frontend-project-44/actions)",
   "main": "src/index.js",
   "scripts": {
-    
     "start": "node ./bin/brain-games.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "type": "module"
   },
   "author": "",
   "license": "ISC",
- "bin": {
-    
+  "bin": {
     "brain-games": "./bin/brain-games.js"
   },
   "keywords": [],
   "dependencies": {
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^16.0.0"
   }
 }
-
