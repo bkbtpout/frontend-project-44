@@ -8,6 +8,7 @@
     "even": "node ./bin/brain-even.js",
     "calc": "node ./bin/brain-calc.js",
     "gcd": "node  ./bin/brain-gcd.js",
+    "progression": "node ./bin/brain-progression.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "type": "module"
   },
@@ -17,7 +18,8 @@
     "brain-games": "./bin/brain-games.js",
     "brain-even": "./bin/brain-even.js",
     "brain-calc": "./bin/brain-calc.js",
-    "brain-gcd": "./bin/brain-gcd.js"
+    "brain-gcd": "./bin/brain-gcd.js",
+    "brain-progression": "./bin/brain-progression.js"
   },
   "keywords": [],
   "dependencies": {
