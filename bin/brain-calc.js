@@ -1,48 +1,23 @@
-const chalk = require('chalk');
-const { getRandomIntInclusive } = require('../src/utils');
-const readline = require('readline').createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-const rounds = 3;
-let correctAnswers = 0;
-
-console.log('What is the result of the expression?');
-
-function askQuestion(expression) {
-  return new Promise(resolve => {
-    readline.question(`${expression}: `, resolve);
-  });
-}
-
-async function playGame() {
-  for (let i = 0; i < rounds; i++) {
-    const num1 = getRandomIntInclusive(1, 10);
-    const num2 = getRandomIntInclusive(1, 10);
-    const operator = ['+', '-', '*'][Math.floor(Math.random() * 3)];
-    const expression = `${num1} ${operator} ${num2}`;
-    const expectedAnswer = eval(expression);
-
-    const answer = await askQuestion(expression);
-
-    if (parseFloat(answer) === expectedAnswer) {
-      console.log('Correct!');
-      correctAnswers++;
-    } else {
-      console.log(chalk.red.bold('Wrong!'));
-      console.log(`The correct answer was ${expectedAnswer}`);
-      break;
-    }
+import getRandomInt from '../utils.js'; 
+const operations = ['+', '-', '*'];
+const calculate = (num1, num2, operation) => {
+  switch (operation) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    default:
+      throw new Error(`Unknown operation: ${operation}`);
   }
-
-  if (correctAnswers === rounds) {
-    console.log(chalk.green.bold('\nCongratulations! You won the game.'));
-  } else {
-    console.log(chalk.red.bold('\nYou lost the game. Try again next time.'));
-  }
-
-  readline.close();
-}
-
-playGame();
+};
+const getGameData = () => {
+  const num1 = getRandomInt(1, 100);
+  const num2 = getRandomInt(1, 100);
+  const operation = operations[getRandomInt(0, operations.length - 1)];
+  const question = `${num1} ${operation} ${num2}`;
+  const answer = String(calculate(num1, num2, operation));
+  return { question, answer };
+};
+export default getGameData;
