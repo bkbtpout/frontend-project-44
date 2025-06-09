@@ -32,5 +32,9 @@
     "eslint": "^9.21.0",
     "eslint-plugin-react": "^7.37.4",
     "globals": "^16.0.0"
-  }
+  },
+ 
+   "type": "module"
+  
 }
+

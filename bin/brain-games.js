@@ -1,9 +1,6 @@
 
 
-console.log('Welcome to the Brain Games!')
+console.log('Welcome to the Brain Games!');
 
-
-const cli = require('../src/cli');
-
-
-cli();
+import greetUser  from '../src/cli.js';
+greetUser ();
